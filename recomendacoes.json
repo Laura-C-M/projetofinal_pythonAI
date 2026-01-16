@@ -1,0 +1,65 @@
+{
+  "recomendacoes": [
+    {
+      "title": "Psycho",
+      "year": 1960,
+      "description": "Uma secretária foge com dinheiro roubado e acaba em um motel isolado gerenciado por um homem enigmático e sua mãe dominadora. Um marco do suspense psicológico.",
+      "rating": 9
+    },
+    {
+      "title": "The Exorcist",
+      "year": 1973,
+      "description": "Uma mãe desesperada busca ajuda para sua filha de 12 anos, que está possuída por uma entidade demoníaca, levando a um confronto aterrorizante com o mal puro.",
+      "rating": 9
+    },
+    {
+      "title": "Alien",
+      "year": 1979,
+      "description": "A tripulação de uma nave espacial comercial encontra uma forma de vida alienígena predatória que os caça um por um, em um ambiente claustrofóbico e mortal.",
+      "rating": 9
+    },
+    {
+      "title": "The Shining",
+      "year": 1980,
+      "description": "Um escritor em recuperação e sua família aceitam ser os zeladores de um hotel isolado durante o inverno, onde forças sobrenaturais começam a afetar a sanidade do pai.",
+      "rating": 9
+    },
+    {
+      "title": "A Nightmare on Elm Street",
+      "year": 1984,
+      "description": "Um grupo de adolescentes é aterrorizado nos seus sonhos por um assassino queimado com garras de navalha, que também pode matá-los na vida real.",
+      "rating": 8
+    },
+    {
+      "title": "The Silence of the Lambs",
+      "year": 1991,
+      "description": "Uma jovem agente do FBI precisa da ajuda de um brilhante, mas perigoso, assassino canibal para pegar outro serial killer que arranca a pele de suas vítimas.",
+      "rating": 9
+    },
+    {
+      "title": "Scream",
+      "year": 1996,
+      "description": "Um ano após a morte de sua mãe, uma adolescente e seus amigos se tornam alvo de um misterioso assassino mascarado que conhece os clichês dos filmes de terror.",
+      "rating": 8
+    },
+    {
+      "title": "The Babadook",
+      "year": 2014,
+      "description": "Uma mãe viúva e seu filho lutam contra um monstro assustador de um livro infantil que parece ter se tornado real, personificando a dor e o luto.",
+      "rating": 8
+    },
+    {
+      "title": "Get Out",
+      "year": 2017,
+      "description": "Um fotógrafo negro visita a propriedade rural da família de sua namorada branca e descobre um segredo perturbador que afeta todos os hóspedes negros.",
+      "rating": 9
+    },
+    {
+      "title": "Hereditary",
+      "year": 2018,
+      "description": "Após a morte da avó matriarca, a família Graham desvenda segredos aterrorizantes sobre sua linhagem, enquanto uma presença maligna se manifesta.",
+      "rating": 8
+    }
+  ],
+  "favoritos": []
+}
