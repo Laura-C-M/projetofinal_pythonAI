@@ -8,21 +8,25 @@ from tmdb import configurar_tmdb, buscar_tmdb
 ARQUIVO_RECOMENDACOES = "recomendacoes.json"
  
 # ------------------ JSON ------------------
+#serve para cfriar o ficheiro JSON onde as informações ficam guardadas
  
 def inicializar_json():
     if not os.path.exists(ARQUIVO_RECOMENDACOES):
         with open(ARQUIVO_RECOMENDACOES, "w", encoding="utf-8") as f:
             json.dump({"recomendacoes": [], "favoritos": []}, f, indent=2, ensure_ascii=False)
+#inicia o código com as recomendações vazias
  
 def carregar_dados():
     with open(ARQUIVO_RECOMENDACOES, "r", encoding="utf-8") as f:
         return json.load(f)
+#carrega os dados do código 
  
 def guardar_recomendacoes(filmes):
     dados = carregar_dados()
     dados["recomendacoes"] = filmes
     with open(ARQUIVO_RECOMENDACOES, "w", encoding="utf-8") as f:
         json.dump(dados, f, indent=2, ensure_ascii=False)
+#guarda as recomendações feitas
  
 def adicionar_favorito(filme):
     dados = carregar_dados()
@@ -30,6 +34,7 @@ def adicionar_favorito(filme):
         dados["favoritos"].append(filme)
     with open(ARQUIVO_RECOMENDACOES, "w", encoding="utf-8") as f:
         json.dump(dados, f, indent=2, ensure_ascii=False)
+#coloca o filme como guardado nos favoritos
  
 # ------------------ INIT ------------------
  

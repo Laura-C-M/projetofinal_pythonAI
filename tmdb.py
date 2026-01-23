@@ -1,12 +1,15 @@
+#biblioteca de filmes online sobre a qual o site se baseia para escolher os filmes para os utiliziadores
+#de acordo com as suas preferências
+
 from tmdbv3api import TMDb, Movie
  
 tmdb = TMDb()
 movie_api = Movie()
- 
+#usa a API e a linguagem para a IA responder de acordo com a linguagem do usuário
 def configurar_tmdb(api_key, idioma="pt-PT"):
     tmdb.api_key = api_key
     tmdb.language = idioma
- 
+#serve para procurar as informações sobre os filmes no TMDB
 def buscar_tmdb(titulo, ano):
     try:
         resultados = movie_api.search(titulo)

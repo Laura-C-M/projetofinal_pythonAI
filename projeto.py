@@ -102,7 +102,6 @@ def gerar_recomendacoes(preferencias, quantidade):
 
     {json.dumps(preferencias, ensure_ascii=False)}
 
- 
 
     Responda EXCLUSIVAMENTE em JSON no formato / Respond EXCLUSIVELY in JSON format:
 
@@ -182,9 +181,9 @@ def buscar_tmdb(titulo, ano):
 
                 return {
 
-                    "poster": f"https://image.tmdb.org/t/p/w500{detalhes.poster_path}" if detalhes.poster_path else None,
+                    "poster": f"https://image.tmdb.org/t/p/w500{detalhes.poster_path}" if detalhes.poster_path else None, #busca a imagem da capa do filme
 
-                    "trailer": f"https://www.youtube.com/embed/{trailer}" if trailer else None
+                    "trailer": f"https://www.youtube.com/embed/{trailer}" if trailer else None #apresenta o trailer do filme
 
                 }
 
@@ -201,43 +200,48 @@ def buscar_tmdb(titulo, ano):
 # =====================
 
  
-
+#título da página e ícone(no separador)
 st.set_page_config(page_title="Recomendador de Filmes / Film Recommender", page_icon="🎬")
-
+#titulo da página
 st.title("🎬 Recomendador de Filmes com IA / Film Recommender with AI")
-
+#texto na página web
 st.write("Aplicação educativa usando Gemini + TMDb / Educational app using Gemini + TMDb")
 
  
-
+#formulário para procurar os melhores filmes
 with st.form("form_filmes"):
-
+    
+    #género favorito
     genero = st.text_input("Género favorito / Favorite genre")
 
+    #época do filme (ex:anos 2000)
     epoca = st.selectbox("Época / Era", ["Não importa / Not important", "Antes de 2000 / Before 2000", "Depois de 2010 / After 2010"])
 
+    #estilo de filme
     estilo = st.radio("Estilo do filme / Movie style", ["Leve / Light", "Emocional / Emotional", "Equilibrado / Balanced"])
 
+    #nº de recomendações de filmes pedidas
     quantidade = st.slider("Quantidade de filmes / Number of movies", 3, 10, 5)
 
  
-
+    #conclui o formulário e começa a busca pelos filmes feita pela IA
     submeter = st.form_submit_button("Gerar filmes / Generate movies")
 
  
-
+#após submeter as respostas ao formulário
 if submeter:
 
+    #documenta as preferências escolhidas pelo utilizador
     preferencias = {"genero": genero, "epoca": epoca, "estilo": estilo}
 
  
-
+    #aparece no site e informa o utilizador de estar a carregar os resultados para as respostas ao seu formulário
     with st.spinner("A gerar recomendações... / Generating recommendations..."):
-
+    
         filmes = gerar_recomendacoes(preferencias, quantidade)
 
  
-
+    #informações sobre o filme
     for filme in filmes:
 
         with st.expander(f"{filme['title']} ({filme['year']})"):
@@ -251,13 +255,13 @@ if submeter:
             dados_tmdb = buscar_tmdb(filme["title"], filme["year"])
 
  
-
+            #caso o TMDB tiver o poster do filome apresentar a imagem ao utilizador
             if dados_tmdb.get("poster"):
 
                 st.image(dados_tmdb["poster"], width=250)
 
  
-
+            #caso o TMDB tiver o trailer do filome apresentar a imagem ao utilizador
             if dados_tmdb.get("trailer"):
 
                 st.video(dados_tmdb["trailer"])

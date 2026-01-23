@@ -1,8 +1,11 @@
-from google import genai
-import json
+from google import genai #importa o gemini como IA do programa
+import json #importa a parte json do código
  
+ #Funçoes
+
 def configurar_gemini(api_key):
     return genai.Client(api_key=api_key)
+#usa a API key para ter acesso à IA usada no código
  
 def gerar_recomendacoes(client, preferencias, quantidade):
     prompt = f"""
@@ -21,6 +24,7 @@ Formato esperado:
   }}
 ]
 """
+#mostra as preferencias escolhidas pelo o utilizador e armazenadas no json
  
     try:
         response = client.models.generate_content(
@@ -45,4 +49,3 @@ Formato esperado:
         )
     except Exception as e:
         raise RuntimeError(f"Erro ao gerar recomendações: {e}")
- 
